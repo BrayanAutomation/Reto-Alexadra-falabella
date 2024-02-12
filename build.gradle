@@ -1,0 +1,42 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:" +
+                "${project.hasProperty('serenityGradleVersion') ? serenityGradleVersion : '+'}")
+    }
+}
+
+plugins {
+    id 'java'
+}
+repositories {
+    mavenCentral()
+}
+
+apply plugin: "net.serenity-bdd.serenity-gradle-plugin"
+group = 'co.com.falabella.automationWeb.AlexandraImmigrationLaw'
+version = '1.0-SNAPSHOT'
+
+dependencies {
+    implementation 'org.projectlombok:lombok:1.18.28'
+    testImplementation "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}",
+            "org.assertj:assertj-core:${assertJVersion}"
+
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+
+    implementation "net.serenity-bdd:serenity-junit:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-cucumber:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}"
+
+            "ch.qos.logback:logback-classic:${logbackVersion}"
+}
+
+gradle.startParameter.continueOnFailure = true
+test.finalizedBy(aggregate)

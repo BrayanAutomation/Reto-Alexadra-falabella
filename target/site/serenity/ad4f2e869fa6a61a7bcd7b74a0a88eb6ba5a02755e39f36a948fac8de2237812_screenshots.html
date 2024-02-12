@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0.min.js"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity BDD Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="4bb3400eb1ce5069c8acf73394f0ed2151ee6b4fa19a159d7da51d5c371f4175.html">Buy Product</a></span>
+                > <span class="truncate-60"><a
+                    href="ad4f2e869fa6a61a7bcd7b74a0a88eb6ba5a02755e39f36a948fac8de2237812.html">User buys a product </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 12-02-2024 13:47</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Buy Product</span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                As a user<br />
+I want to purchase a product<br />
+So that I can use it personally
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="34658a1663fcf042bd7acb3325affbe4e647c8acd84d0228be2f52e1381e61b9.html">10 To 30 Seconds
+                                        (Duration)
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="2a5b6a7be0f08df02d8ab0b4d4c68648c2695c6c7ef0658c71de4d42b1415b18.html">Under 1 Second
+                                        (Duration)
+                                </a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon fa-2x' title='ERROR'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="error-color">User buys a product
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+    <div class="story-title">
+        <h3>Scenario:</h3>
+        <div class="scenario">Given the user is on the main page<br>When the user adds the "&lt;product&gt;" to the cart ensuring its validity<br>And proceeds to checkout completing the purchase process "&lt;correo&gt;" "&lt;Departamento&gt;" "&lt;Ciudad&gt;" "&lt;Barrio&gt;" "&lt;Direccion&gt;" "&lt;TorreAptoUnidad&gt;"<br>Then the user should observe the message "&lt;product&gt;"</div>
+    </div>
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+            <div class="screenshotFailure panel panel-danger">
+    <div style="display:block">
+        <div class="table">
+            <div class="row">
+                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
+                    <span class="error-message error-message-title">Stale element reference exception: stale element reference: stale element not found</span>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-overall"
+                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="bi bi-eye"></i> More details</a>
+                </div>
+             </div>
+        </div>
+    <div>
+
+    <!-- Details Section -->
+    <div class="row stacktrace-details">
+      <div class="col">
+        <div class="collapse multi-collapse" id="stacktraceModal-overall">
+            <div class="card">
+                <div class="card-header">
+                    <h4>org.openqa.selenium.StaleElementReferenceException </h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <pre>net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:519)<br />net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:499)<br />net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:471)<br />net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:213)<br />net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:200)<br />net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:92)<br />co.com.falabella.automationWeb.AlexandraImmigrationLaw.tasks.MakePayment.performAs(MakePayment.java:35)<br />net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:519)<br />net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:499)<br />net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:471)<br />net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:213)<br />net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:200)<br />net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:92)<br />co.com.falabella.automationWeb.AlexandraImmigrationLaw.stepsdefinitions.BuyProductStepDefinition.proceedsToCheckoutCompletingThePurchaseProcess(BuyProductStepDefinition.java:48)<br />io.cucumber.java.Invoker.doInvoke(Invoker.java:66)<br />io.cucumber.java.Invoker.invoke(Invoker.java:24)<br />io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)<br />io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)<br />io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)<br />io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)<br />io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)<br />io.cucumber.core.runner.TestStep.run(TestStep.java:56)<br />io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)<br />io.cucumber.core.runner.TestCase.run(TestCase.java:84)<br />io.cucumber.core.runner.Runner.runPickle(Runner.java:75)<br />io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)<br />io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)<br />io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)<br />io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)<br />io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)<br />io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)<br />io.cucumber.junit.CucumberSerenityBaseRunner.runChild(CucumberSerenityBaseRunner.java:332)<br />io.cucumber.junit.CucumberSerenityBaseRunner.runChild(CucumberSerenityBaseRunner.java:53)<br />worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)<br />worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)<br /></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+                    <div class="panel-body">
+                        <a href="pagesource16629945928311066521.html" target="_blank" class="btn btn-info">HTML Source</a>
+                    </div>
+            </div>
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="525e55487a842e67ca6827dcb273ec2f8be47c43c96759a53bde4531c5a72b13.png" title=" 1: User buys a product ({product=iPhone 15 de 128GB  6GB RAM, correo=brayangranado90@gmail.com, Departamento=ANTIOQUIA, Ciudad=MEDELL&Iacute;N, Barrio=MEDELL&Iacute;N, Direccion=Carrera 99, TorreAptoUnidad=Luna del valle})" width="0"/>
+                <img src="525e55487a842e67ca6827dcb273ec2f8be47c43c96759a53bde4531c5a72b13.png" title=" Cliente Falabella opens the browser at https://www.falabella.com.co/falabella-co" width="0"/>
+                <img src="cd7195c41f6fcc498b3340c486d84c1f6c7b3344fdf786c033c5c0b49e9a941b.png" title=" Given the user is on the main page" width="0"/>
+                <img src="cd7195c41f6fcc498b3340c486d84c1f6c7b3344fdf786c033c5c0b49e9a941b.png" title=" Cliente falabella accept to know offers" width="0"/>
+                <img src="cd7195c41f6fcc498b3340c486d84c1f6c7b3344fdf786c033c5c0b49e9a941b.png" title=" Cliente Falabella clicks on Windows love the offers" width="0"/>
+                <img src="cd7195c41f6fcc498b3340c486d84c1f6c7b3344fdf786c033c5c0b49e9a941b.png" title=" Cliente falabella accept to know offers (completed)" width="0"/>
+                <img src="22bb85a80773582d6fdfe9d597c4e063e87ef5604f05afaec800e3e43ba644d5.png" title=" Cliente falabella close pop up notifications" width="0"/>
+                <img src="22bb85a80773582d6fdfe9d597c4e063e87ef5604f05afaec800e3e43ba644d5.png" title=" Cliente Falabella clicks on x button to close tag" width="0"/>
+                <img src="22bb85a80773582d6fdfe9d597c4e063e87ef5604f05afaec800e3e43ba644d5.png" title=" Cliente falabella close pop up notifications (completed)" width="0"/>
+                <img src="22bb85a80773582d6fdfe9d597c4e063e87ef5604f05afaec800e3e43ba644d5.png" title=" Given the user is on the main page (completed)" width="0"/>
+                <img src="5f4bec90adfc7f59e5c4c9e61d0ba4e7e4f113f8c3b9ade0aa7247e0355c6cd4.png" title=" When the user adds the &quot;iPhone 15 de 128GB  6GB RAM&quot; to the cart ensuring its validity" width="0"/>
+                <img src="5f4bec90adfc7f59e5c4c9e61d0ba4e7e4f113f8c3b9ade0aa7247e0355c6cd4.png" title=" Cliente falabella add product to cart" width="0"/>
+                <img src="5f4bec90adfc7f59e5c4c9e61d0ba4e7e4f113f8c3b9ade0aa7247e0355c6cd4.png" title=" Cliente Falabella enters 'iphone' into Product Searcher" width="0"/>
+                <img src="bd0920be81746517a67b8cd70a3a860fea7eb6d67d09b9327a2fc939a89128e4.png" title=" Cliente Falabella clicks on click in Product Searcher" width="0"/>
+                <img src="0ea807ddaf3b0043809b68119d190c5c0b5fa088622d563fe9f0730bd0d92c94.png" title=" Cliente Falabella clicks on Select Product" width="0"/>
+                <img src="f319ccd61ea823cee2d53a767b8982aacf2d9729c3858c4fa03d421f32f12b5d.png" title=" Cliente Falabella clicks on Add product to cart" width="0"/>
+                <img src="962d2009fce38f4e458cab1628fbd19609c058ffee764a71df9fc2c90b9f6e47.png" title=" Cliente Falabella clicks on Go to cart" width="0"/>
+                <img src="962d2009fce38f4e458cab1628fbd19609c058ffee764a71df9fc2c90b9f6e47.png" title=" Cliente falabella add product to cart (completed)" width="0"/>
+                <img src="a23f5934186359e302e52dd88787229df8052ab1816b9314fa71d2e2ad86ec5e.png" title=" Cliente Falabella should see Product in the cart that is displayed" width="0"/>
+                <img src="a23f5934186359e302e52dd88787229df8052ab1816b9314fa71d2e2ad86ec5e.png" title=" When the user adds the &quot;iPhone 15 de 128GB  6GB RAM&quot; to the cart ensuring its validity (completed)" width="0"/>
+                <img src="5c6e6ae0cd727821ae4b2909889adb7ab2d877be475cbe4fdcd1acc808e6f1c2.png" title=" And proceeds to checkout completing the purchase process &quot;brayangranado90@gmail.com&quot; &quot;ANTIOQUIA&quot; &quot;MEDELL&Iacute;N&quot; &quot;MEDELL&Iacute;N&quot; &quot;Carrera 99&quot; &quot;Luna del valle&quot;" width="0"/>
+                <img src="5c6e6ae0cd727821ae4b2909889adb7ab2d877be475cbe4fdcd1acc808e6f1c2.png" title=" Cliente falabella make payment" width="0"/>
+                <img src="5c6e6ae0cd727821ae4b2909889adb7ab2d877be475cbe4fdcd1acc808e6f1c2.png" title=" Cliente Falabella clicks on Continue shopping button" width="0"/>
+                <img src="0425fddd69ac5af703070310f4b5136fc156c832ebbc39d5b740a68fc557fab5.png" title=" Cliente Falabella enters 'brayangranado90@gmail.com' into Field to enter mail" width="0"/>
+                <img src="58a2b5a0e6d97cdd4f5951b8898a0e96feac6a18c14bec1a8d315f6121f6453a.png" title=" Cliente Falabella clicks on Continue shopping button" width="0"/>
+                <img src="dbfc7277a66d4d221159eb11dd32d6b27ecb7cfd9b1dba37f4bde277004acdaa.png" title=" Cliente falabella fill form" width="0"/>
+                <img src="dbfc7277a66d4d221159eb11dd32d6b27ecb7cfd9b1dba37f4bde277004acdaa.png" title=" Cliente Falabella clicks on Select department field" width="0"/>
+                <img src="5564287b19077f7b966bad24a63ebc42ce2a27066ba486e3226e220cc09c4d93.png" title=" Cliente Falabella clicks on Enter option in the form" width="0"/>
+                <img src="49fa0361bf3ea5677c23670823b865a57cb2fe5cb4f392cc226ba11001eaa21e.png" title=" Cliente Falabella clicks on Select city field" width="0"/>
+                <img src="b3ddbbd1651b18bf79bb248002410c236c668de1d926e6f6a524c29d6bbbee30.png" title=" Cliente Falabella clicks on Enter option in the form" width="0"/>
+                <img src="4b847f7f9370b1c68d454d076369466a33e7a65f7a226a6f0aa4d2567d9699cf.png" title=" Cliente Falabella clicks on Select neighborhood field" width="0"/>
+                <img src="5cee12705ae3f924dd51fcb93796430f05c8a1207a4cd2758192b1bf5206d30d.png" title=" Cliente Falabella clicks on Enter option in the form" width="0"/>
+                <img src="ba93dc6dbd72c85f5e1b648d8c2ba3afebb20fad90ba5464cbeace322960b3a2.png" title=" Cliente Falabella enters 'Carrera 99' into Select address field" width="0"/>
+                <img src="eecba8fcd576f356f637221d976a6e8302ac7bcf9ae14e465e8fa3a421127d9d.png" title=" Cliente Falabella enters 'Luna del valle' into Select Apto field" width="0"/>
+                <img src="eecba8fcd576f356f637221d976a6e8302ac7bcf9ae14e465e8fa3a421127d9d.png" title=" Cliente falabella fill form (completed)" width="0"/>
+                <img src="09f08f9b2e5ac197f3d3322a083aa27811e536cc0b3b1a9086efcba9ded151ee.png" title=" Cliente Falabella clicks on Button confirm address" width="0"/>
+                <img src="bd9486ecafc46066c6fe21e33307fabb7dcbd21af0832e51db2bb4f808d4fd0d.png" title=" Cliente Falabella clicks on Button confirm address" width="0"/>
+                <img src="cac8c5650af0e736df5702dd526aa7c13c60acee564b758cc722ae8a211356a2.png" title=" Cliente Falabella clicks on Button confirm map" width="0"/>
+                <img src="880bb4058249a29802e2dd572fc989aa774985191b107a3962b70344dfe55b33.png" title=" Cliente Falabella clicks on Button go to payments" width="0"/>
+                <img src="58e1ffd31fb09ad2b4a3a359e5a893e87b045ba5f66afa1d249d9811b4abc0ae.png" title=" 2: User buys a product ({product=iPhone 11 128 GB 4GB RAM, correo=alguien@dominio.com, Departamento=CUNDINAMARCA, Ciudad=CABRERA, Barrio=CABRERA, Direccion=Calle sal si puedes 91, TorreAptoUnidad=Unidad los altos, torre 5})" width="0"/>
+                <img src="58e1ffd31fb09ad2b4a3a359e5a893e87b045ba5f66afa1d249d9811b4abc0ae.png" title=" Cliente Falabella opens the browser at https://www.falabella.com.co/falabella-co" width="0"/>
+                <img src="22bb85a80773582d6fdfe9d597c4e063e87ef5604f05afaec800e3e43ba644d5.png" title=" Given the user is on the main page" width="0"/>
+                <img src="22bb85a80773582d6fdfe9d597c4e063e87ef5604f05afaec800e3e43ba644d5.png" title=" Cliente falabella accept to know offers" width="0"/>
+                <img src="22bb85a80773582d6fdfe9d597c4e063e87ef5604f05afaec800e3e43ba644d5.png" title=" Cliente Falabella clicks on Windows love the offers" width="0"/>
+                <img src="22bb85a80773582d6fdfe9d597c4e063e87ef5604f05afaec800e3e43ba644d5.png" title=" Cliente falabella accept to know offers (completed)" width="0"/>
+                <img src="275206ed9d113f3949466a686c5ed98c3d0a860b69bcb272d4af493ab60acf64.png" title=" Given the user is on the main page" width="0"/>
+                <img src="275206ed9d113f3949466a686c5ed98c3d0a860b69bcb272d4af493ab60acf64.png" title=" Cliente Falabella clicks on x button to close tag" width="0"/>
+                <img src="35f3041e41d379b4d7f65defaa7382dd243c60a3c8cddc338cfb0173bd35f7d9.png" title=" 3: User buys a product ({product=iPhone 12 de 256GB, correo=sacarias@piedras.com, Departamento=LA GUAJIRA, Ciudad=EL MOLINO, Barrio=EL MOLINO, Direccion=Trasversal superor 45, TorreAptoUnidad=Torres los campos})" width="0"/>
+                <img src="35f3041e41d379b4d7f65defaa7382dd243c60a3c8cddc338cfb0173bd35f7d9.png" title=" Cliente Falabella opens the browser at https://www.falabella.com.co/falabella-co" width="0"/>
+                <img src="048c70a3b92215777e69e5940cb59fc2a72f416939a9f3e2c884f19765ec018b.png" title=" Given the user is on the main page" width="0"/>
+                <img src="048c70a3b92215777e69e5940cb59fc2a72f416939a9f3e2c884f19765ec018b.png" title=" Cliente falabella accept to know offers" width="0"/>
+                <img src="048c70a3b92215777e69e5940cb59fc2a72f416939a9f3e2c884f19765ec018b.png" title=" Cliente Falabella clicks on Windows love the offers" width="0"/>
+                <img src="048c70a3b92215777e69e5940cb59fc2a72f416939a9f3e2c884f19765ec018b.png" title=" Cliente falabella accept to know offers (completed)" width="0"/>
+                <img src="4f3009c7865940a78a346dd408d19f91e972b05e8f127d15f673de453907101f.png" title=" Given the user is on the main page" width="0"/>
+
+                <img src="4f3009c7865940a78a346dd408d19f91e972b05e8f127d15f673de453907101f.png" title=" Cliente Falabella clicks on x button to close tag: <span class='error-color'>ERROR</span>" width="0"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 4.0.15</span>
+</div>
+</body>
+</html>
